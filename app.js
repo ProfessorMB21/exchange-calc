@@ -325,7 +325,7 @@ $('copyBtn').addEventListener('click', async () => {
   if (!current){ toast('Enter an amount first'); return; }
   const c = current, f = state.from, t = state.to, cp = pctOf(c.c);
   const lines = [
-    'Azure Exchange — transfer summary',
+    'A Tayant Pay — transfer summary',
     state.mode === 'receive' ? `Recipient must get: ${fmt(c.target, t)} ${t}` : null,
     `Amount sent:        ${fmt(c.send, f)} ${f}`,
     `Commission (${cp}):  ${fmt(c.commission, f)} ${f}`,
@@ -345,11 +345,11 @@ $('copyBtn').addEventListener('click', async () => {
 function setTheme(t){
   document.documentElement.setAttribute('data-theme', t);
   document.querySelector('meta[name="theme-color"]').content = t === 'dark' ? '#050d1f' : '#0b3d91';
-  try { localStorage.setItem('azure-theme', t); } catch {}
+  try { localStorage.setItem('tayantpay-theme', t); } catch {}
 }
 (function(){
   let t = null;
-  try { t = localStorage.getItem('azure-theme'); } catch {}
+  try { t = localStorage.getItem('tayantpay-theme'); } catch {}
   if (!t) t = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   setTheme(t);
 })();
