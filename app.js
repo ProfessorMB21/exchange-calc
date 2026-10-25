@@ -148,7 +148,14 @@ function tweenTo(el, to, code){
 function renderQuick(){
   const side = state.mode === 'send' ? 'from' : 'to';
   const cur = state[side], d = CURRENCIES[cur];
-  $('quick').innerHTML = (d.quick || []).map(n => `<button type="button" data-v="${n}">${d.symbol} ${n.toLocaleString('en-US')}</button>`).join('');
+  const { rate } = pairInfo(cur, cur === CONFIG.base ? codes().find(c => c !== CONFIG.base) : CONFIG.base);
+  // Default quick amounts in base currency, converted to current currency
+  const defaults = [1000, 5000, 10000, 50000];
+  const amounts = (d.quick || defaults).map(n => {
+    // If this is the base currency, use as-is; otherwise convert
+    return cur === CONFIG.base ? n : Math.round(n * rate);
+  });
+  $('quick').innerHTML = amounts.map(n => `<button type="button" data-v="${n}">${d.symbol} ${n.toLocaleString('en-US')}</button>`).join('');
 }
 
 /* ---------- main render ---------- */
