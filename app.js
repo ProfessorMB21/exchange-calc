@@ -19,9 +19,10 @@ const CONFIG = {
 };
 const CURRENCIES = {
   RUB: { name:'Russian Ruble',  symbol:'₽', badge:'₽', perBase:1,        decimals:2, quick:[1000,5000,10000,50000], grad:['#60a5fa','#1e3a8a'] },
-  ZMW: { name:'Zambian Kwacha', symbol:'K', badge:'K', perBase:0.227977, decimals:2, quick:[200,1000,2500,10000],   grad:['#7dd3fc','#1d4ed8'] },
+  ZMW: { name:'Zambian Kwacha', symbol:'K', badge:'K', perBase:0.210434, decimals:2, quick:[200,1000,2500,10000],   grad:['#7dd3fc','#1d4ed8'] },
 };
 const PAIR_OVERRIDES = {
+  'ZMW>RUB': { rate: 4.3865 },
   // 'RUB>ZMW': { rate: 0.210434, commission: 0.03 },
 };
 /* ===================================================================== */
