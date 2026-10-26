@@ -254,6 +254,8 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:6px 0 
 .tile span{display:block;font-size:.82rem;color:var(--muted);margin-top:4px;line-height:1.5}
 
 footer{text-align:center;margin-top:34px;color:var(--muted);font-size:.78rem;line-height:1.7}
+.ghosted-link{color:var(--primary);font-weight:700;text-decoration:none}
+.ghosted-link:hover{text-decoration:underline}
 
 .toast{
   position:fixed;left:50%;bottom:28px;transform:translate(-50%,30px);opacity:0;pointer-events:none;
