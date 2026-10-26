@@ -156,7 +156,7 @@ function renderQuick(){
     // If this is the base currency, use as-is; otherwise convert
     return cur === CONFIG.base ? n : Math.round(n * rate);
   });
-  $('quick').innerHTML = amounts.map(n => `<button type="button" data-v="${n}">${d.symbol} ${n.toLocaleString('en-US')}</button>`).join('');
+  $('quick').innerHTML = amounts.map(n => `<button type="button" data-v="${n}">${n.toLocaleString('en-US')}</button>`).join('');
 }
 
 /* ---------- main render ---------- */
